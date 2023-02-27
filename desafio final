@@ -1,0 +1,85 @@
+s: borderRadius.all(Radius.circular(50))
+    ),
+    ),
+   ), 
+  );
+  home: const himport'package:flutter/material.dart';
+
+import'dart:convert' as convert;
+
+import'package:http/http.dart' as http;
+
+void main(){
+runapp(Bookapp));
+}
+
+class Bookapp extends Statelesswidget{
+@override
+windget build(buildcontext context){
+  return materialapp(
+ theme: themerdata(
+   primeryswatch: colors.ambar,
+   inputdecorationTemer: const inputdecorationTemer(
+    borter: outlinelnputborter(
+    borderradiuomepage
+}
+}
+
+
+class homepage extends Statefulwindget{
+  const homepage({key?key}): super(key:key);
+  
+  @override
+  _homepageState createState()=>_homepageState();
+ }
+
+class _homepageState extends State<homepage>{
+ final _controller=textEditingcontroller();
+var titulo = "";
+var itemcount = 0;
+
+ void _buscarLivros() astync{
+   titulo=_controller.text;
+   final url= uri.https(
+   -executem (Run) apenas quando todos finalizarem o codigo.
+   -nota baseada na atenção e na comunicação de vocês.
+   -se trapacearem haverá diminuição da nota/consequentemente anulação do desafio
+    'www.googleapis.com'
+    '/books/v1/volumes',
+     {'q':'{$titulo}'},
+   );
+   
+   final response = await http.get(url);
+   
+   if (response.statuscode == 200){
+     final jsonResponse = conver.jsondecode(response.boby);
+     itemcount = jsonResponse ['totalltems'];
+     print('number of books about $titulo: $itemcount.');
+     setState((){});
+   } else {
+    print('Request failed with status:${respose.statuscode}.'); 
+   }
+ }
+  
+ @override
+  windget build(buildcontext context){
+  return scaffold(
+  roby:padding(
+  padding:const edgelnsets.all(16),
+  children: listview(
+  children:[
+   textfield(
+   controller:_controller); 
+   const sizerdbox(height:16),
+    elevatedBtton.icon(
+    onpressed:_buscarlivros,
+   icon: const icon(icons.search) 
+   label: const text('pesquisa')),
+   const sizedbox(height:16),
+    text(
+    '')
+  ]
+   )
+  )
+  )
+  }
